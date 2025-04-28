@@ -1,0 +1,9 @@
+{% extends 'edu_http/base.html' %}
+ {% block content %}
+ <h1>HttpRequest Example</h1>
+ <p><strong>Method:</strong> {{ method }}</p>
+ <p><strong>Headers:</strong> {{ headers }}</p>
+ <p><strong>Path:</strong> {{ path }}</p>
+ <p><strong>GET params:</strong> {{ GET }}</p>
+ <p><strong>User:</strong> {{ user }}</p>
+ {% endblock %}

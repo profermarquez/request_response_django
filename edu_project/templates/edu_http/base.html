@@ -1,0 +1,15 @@
+ <!DOCTYPE html>
+ <html>
+ <head><title>Django Request & Response</title></head>
+ <body>
+ <nav>
+   <ul>
+     {% for path, label in routes %}
+         <li><a href="{{ path }}">{{ label }}</a></li>
+     {% endfor %}
+   </ul>
+ </nav>
+ <hr>
+ {% block content %}{% endblock %}
+ </body>
+ </html>

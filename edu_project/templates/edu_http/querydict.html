@@ -1,0 +1,7 @@
+{% extends 'edu_http/base.html' %}
+{% block content %}
+<h1>QueryDict Objects</h1>
+<p><strong>GET:</strong> {{ get_data }}</p>
+<p><strong>POST:</strong> {{ post_data }}</p>
+<p>Los objetos QueryDict son usados para acceder a los datos enviados mediante formularios HTML. Soportan múltiples valores para la misma clave.</p>
+{% endblock %}

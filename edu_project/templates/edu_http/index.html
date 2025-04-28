@@ -1,0 +1,23 @@
+{% extends 'edu_http/base.html' %}
+{% block content %}
+<h1>Explorador de Django Request & Response</h1>
+<p>Este sitio educativo te guía a través de los componentes principales del manejo de solicitudes (request) y respuestas (response) en Django.</p>
+
+<ul>
+    <li><a href="/request/">HttpRequest objects</a>: Muestra los atributos más comunes disponibles en una solicitud entrante.</li>
+    <li><a href="/request/app-attributes/">Attributes set by application code</a>: Ejemplo de cómo tu propia vista puede agregar atributos al request.</li>
+    <li><a href="/request/middleware/">Attributes set by middleware</a>: Ejemplo de cómo un middleware puede agregar datos al request.</li>
+    <li><a href="/request/querydict/">QueryDict objects</a>: Muestra los datos que vienen en GET y POST y cómo Django los representa.</li>
+    <li><a href="/response/">HttpResponse objects</a>: Muestra una respuesta HTTP básica con texto plano.</li>
+    <li><a href="/request/is-secure/">HttpRequest.is_secure()</a>: Verifica si la conexión es segura (HTTPS).</li>
+    <li><a href="/response/subclasses/">HttpResponse subclasses</a>: Agrega cabeceras personalizadas a una respuesta.</li>
+    <li><a href="/response/json/">JsonResponse</a>: Ejemplo de cómo retornar datos en formato JSON.</li>
+    <li><a href="/home/">Vista GET/POST combinada (formulario demo)</a>: Demuestra cómo manejar ambos métodos en una misma vista.</li>
+    <li><a href="/response/streaming/">StreamingHttpResponse</a>: Muestra cómo enviar datos por partes (streaming).</li>
+    <li><a href="/response/disconnects/">Handling disconnects</a>: Explicación teórica sobre cómo manejar desconexiones del cliente.</li>
+    <li><a href="/response/file/">FileResponse</a>: Descarga un archivo como respuesta.</li>
+    <li><a href="/response/base/">HttpResponseBase</a>: Describe la clase base de todas las respuestas.</li>
+</ul>
+
+<p>Este proyecto fue diseñado con fines educativos para ayudar a entender cómo Django maneja la interacción cliente-servidor.</p>
+{% endblock %}

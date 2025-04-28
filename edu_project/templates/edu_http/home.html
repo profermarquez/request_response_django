@@ -1,0 +1,13 @@
+{% extends 'edu_http/base.html' %}
+
+{% block content %}
+<h1>Formulario de prueba</h1>
+<p>Esta página demuestra cómo manejar GET y POST en una sola vista.</p>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="nombre">Tu nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}

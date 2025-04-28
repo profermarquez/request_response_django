@@ -1,0 +1,12 @@
+{% extends 'edu_http/base.html' %}
+
+{% block content %}
+<h1>¿Es conexión segura?</h1>
+<p>Esta vista usa <code>request.is_secure()</code> para verificar si la conexión es HTTPS.</p>
+
+{% if secure %}
+    <p style="color:green;"><strong>¡Sí! Esta es una conexión segura (HTTPS).</strong></p>
+{% else %}
+    <p style="color:red;"><strong>No. Esta es una conexión insegura (HTTP).</strong></p>
+{% endif %}
+{% endblock %}
