@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponse, JsonResponse, StreamingHttpResponse, HttpResponseNotAllowed, FileResponse, Http404
 from django.shortcuts import render
+
 import time
 
 
@@ -90,14 +91,14 @@ def stream_response_example(request):
         yield 'Fin del stream.\n'
     return StreamingHttpResponse(generador(), content_type='text/plain')
 
-
-def disconnect_example(request):
-    return HttpResponse("Simulación de desconexión no implementada (requiere test desde cliente).")
-
 import os
 from django.conf import settings
 BASE_DIR = settings.BASE_DIR
 
+class MiRespuestaPersonalizada(HttpResponse):
+    def __init__(self, contenido, *args, **kwargs):
+        super().__init__(contenido, *args, content_type='text/plain', **kwargs)
+        
 def file_response_example(request):
     file_path = os.path.join(BASE_DIR, 'files', 'example.txt')
     if not os.path.exists(file_path):
@@ -106,8 +107,7 @@ def file_response_example(request):
 
 
 def response_base_example(request):
-    resp = HttpResponse("Esto extiende de HttpResponseBase")
-    return resp
+    return MiRespuestaPersonalizada("Este es un mensaje personalizado.")
 
 def index(request):
     context = base_context()
